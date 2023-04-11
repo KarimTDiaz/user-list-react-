@@ -24,6 +24,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 	font-family: sans-serif;
+background-image: url('/public/dddepth-078.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+	background-size: cover;
 }
 `;
 

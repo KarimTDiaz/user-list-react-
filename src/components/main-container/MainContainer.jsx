@@ -7,15 +7,18 @@ import { StyledMainContainer } from './styles';
 const MainContainer = () => {
 	const [active, setActive] = useState(false);
 	const [search, setSearch] = useState('');
+	const [sort, setSort] = useState(0);
+
 	return (
 		<StyledMainContainer>
 			<Title>Listado de usuarios</Title>
-			<Filters active={active} setActive={setActive} setSearch={setSearch} />
-			<UserCardsContainer
+			<Filters
 				active={active}
 				setActive={setActive}
-				search={search}
+				setSearch={setSearch}
+				setSort={setSort}
 			/>
+			<UserCardsContainer active={active} search={search} sort={sort} />
 		</StyledMainContainer>
 	);
 };
