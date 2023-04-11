@@ -6,11 +6,16 @@ import { StyledMainContainer } from './styles';
 
 const MainContainer = () => {
 	const [active, setActive] = useState(false);
+	const [search, setSearch] = useState('');
 	return (
 		<StyledMainContainer>
 			<Title>Listado de usuarios</Title>
-			<Filters active={active} setActive={setActive} />
-			<UserCardsContainer active={active} setActive={setActive} />
+			<Filters active={active} setActive={setActive} setSearch={setSearch} />
+			<UserCardsContainer
+				active={active}
+				setActive={setActive}
+				search={search}
+			/>
 		</StyledMainContainer>
 	);
 };

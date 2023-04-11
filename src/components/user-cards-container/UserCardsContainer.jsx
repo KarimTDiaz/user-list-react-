@@ -2,11 +2,13 @@ import { USERS } from '../../constants/users';
 import UserCard from '../user-card/UserCard';
 import { StyledUserCardsContainer } from './styles';
 
-const UserCardsContainer = ({ active, setActive }) => {
-	const usersList = usersActive(active);
+const UserCardsContainer = ({ active, setActive, search }) => {
+	const users = usersActive(active);
+	const users2 = usersSearch(search);
+
 	return (
 		<StyledUserCardsContainer>
-			{usersList.map(user => (
+			{users.map(user => (
 				<UserCard key={user.id} {...user} />
 			))}
 		</StyledUserCardsContainer>
@@ -19,4 +21,9 @@ const usersActive = active => {
 	}
 	return [...USERS];
 };
+
+const usersSearch = search => {
+	return USERS.filter(user => user.name.includes(search));
+};
+
 export default UserCardsContainer;
